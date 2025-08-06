@@ -1,48 +1,47 @@
-import academiaLogo from "./images/logo.jpeg";
-import socialMedia from "./images/social.jpeg";
-function Footer (){
+import firstphoto from "./images/team-1.jpeg";
+import secondphoto from "./images/team-2.jpeg";
+import thirdphoto from "./images/team-3.jpeg";
+function Testimonial (){
     return (
-        <>
-        <div className="footer-bg mt-5 pt-5">
-      <div className="container">
-        <div className="row">
-            <div className="col-md-3 mt-5">
-                <h4 className="text-white fw-bold text-uppercase footer-item">About Us</h4>
-                <p className="text-white mt-2 lh-lg">Heaven fruitful doesn't over lesser <br /> days appear creeping seasons so <br /> behold bearing days open</p>
-                <img src={academiaLogo} className="img-fluid w-50 h-25 mt-4" alt="Academia Logo" />
+        <div className="container-fluid testimonial-bg">
+            <div className="row mt-5">
+            <div className="col-md-12">
+            <div className="carousel slide" id="slides-with-indicators" data-bs-ride= "carousel" data-bs-interval="2000">
+                    <div className="carousel-inner">
+                    <div className="carousel-item active">
+                        <div className="d-flex justify-content-center mt-5 pt-4">
+                        <img className="d-block testi" src={firstphoto} alt="" />
+                        </div>
+                        <h2 className="text-white fw-bold text-center mt-3">Raul Edward</h2>
+                        <h5 className="text-primary fw-bold text-center mt-3">Ceo & Founder</h5>
+                        <p className="text-white mt-3 text-center">Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies <br /> eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</p>
+                    </div>
+                    <div className="carousel-item">
+                        <div className="d-flex justify-content-center mt-5 pt-4">
+                        <img className="d-block testi" src={secondphoto} alt="" />
+                        </div>
+                        <h2 className="text-white fw-bold text-center mt-3">Sarah Jhonson</h2>
+                        <h5 className="text-primary fw-bold text-center mt-3">Courses Coordinator</h5>
+                    <p className="text-white mt-3 text-center">Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies <br /> eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</p>
+                    </div>
+                    <div className="carousel-item">
+                        <div className="d-flex justify-content-center mt-5 pt-4">
+                        <img className="d-block testi" src={thirdphoto} alt="" />
+                        </div>
+                        <h2 className="text-white fw-bold text-center mt-3">Michael Pop</h2>
+                        <h5 className="text-primary fw-bold text-center mt-3">Social Media Manager</h5>
+                        <p className="text-white mt-3 text-center">Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies <br /> eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</p>
+                    </div>
+                    </div>
+                    <div className="carousel-indicators">
+                         <button type="button" data-bs-target="#slides-with-indicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#slides-with-indicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                       <button type="button" data-bs-target="#slides-with-indicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+</div>
+                </div>
             </div>
-            <div className="col-md-3 mt-5">
-                <h4 className="text-white fw-bold text-uppercase footer-item">contact info</h4>
-                <p className="text-white lh-lg">A108 Adam Street <br /> New York, NY 535022</p>
-                <p className="text-white mt-2">Phone: +1 5589 55488 55</p>
-                <p className="text-white mt-3">academia@gmail.com</p>
-                <img src={socialMedia} className="img-fluid mt-4" alt="" />
-            </div>
-            <div className="col-md-3 mt-5">
-                <h4 className="text-white fw-bold footer-item">IMPORTANT LINK</h4>
-                <ul className="list-unstyled text-white mt-3 lh-lg">
-                    <li>Home</li>
-                    <li>Courses</li>
-                    <li>Cart</li>
-                    <li>LogIn</li>
-                </ul>
-            </div>
-            <div className="col-md-3 mt-5">
-                <h4 className="text-white fw-bold text-uppercase footer-item">NEWSLETTER</h4>
-                <p className="text-white mt-3 lh-lg">Heaven fruitful doesn't over lesser in days. Appear creeping seasons</p>
-                <input type="email" placeholder="Enter your Email" className="form-control w-75"/>
-                <button className="btn form-btn" type="submit">OK</button>
             </div>
         </div>
-      </div>
-      <div className='line'></div>
-      <div className="footer-end">
-        <p className="mt-5 text-white text-center fw-bold">© Copyright <span className="fw-bold ms-1 me-1" style={{color: "#00BFFF",}}>Academia</span> All Rights Reserved
-
-</p>
-      </div>
-      </div>
-      </>
-    )
+    );
 };
-export default Footer;
+export default Testimonial;
