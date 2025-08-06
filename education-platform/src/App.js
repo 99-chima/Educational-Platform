@@ -4,6 +4,7 @@ import NavBar from "./navBar";
 import Home from "./Home";
 import CoursesList from "./CoursesList"; 
 import About from "./About";
+import Testimonial from "./Testimonial";
 import Contact from "./Contact";
 import './App.css';
 function App() {
@@ -17,6 +18,7 @@ function App() {
         </Routes>
       </Router>
       <About />
+  <Testimonial />
       <Contact />
     </CardProvider>
   );
