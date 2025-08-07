@@ -7,10 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 .intro-bg{
   background: url(./images/31.jpg) center/cover;
 }
@@ -27,4 +23,59 @@ h4{
 }
 .logo{
   height: 70px;
+}
+.testimonial-bg{
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(./images/testimonials-bg.jpeg) center/cover;
+  height: 400px;
+}
+.testi{
+  border-radius: 50%;
+  width: 80px;
+}
+.carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ddd;
+  margin: 0 5px;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+  border: none;
+}
+.carousel-indicators {
+  justify-content: center;
+  margin-top: 1rem;
+  position: static; 
+}
+.carousel-indicators .active {
+  opacity: 1;
+  background-color:  #0d6efd; 
+}
+.footer-bg{
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(./images/footer.jpeg) center/cover;
+}
+.form-btn{
+  background: #8b62ff;
+  color: white;
+  border: #8b62ff solid 2px;
+  height: 38px;
+  position: relative;
+  left: 170px;
+  bottom: 38px;
+  z-index: 1;
+}
+.form-btn:hover{
+  background: linear-gradient(90deg,#8b62ff 0,#3b1bff);
+  color: white;
+  border: linear-gradient(90deg,#8b62ff 0,#3b1bff) solid 2px;
+}
+.footer-item{
+ font-family: Raleway,sans-serif;
+ font-size: 20px;
+}
+.line{
+  width: 90%;
+  margin-top: 130px;
+  margin-left: 80px;
+  border: 1px solid #fff;
 }
