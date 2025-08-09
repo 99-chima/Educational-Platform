@@ -1,6 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
 export const CardContext = createContext();
-
 export const CardProvider = ({ children }) => {
   const [card, setCard] = useState([]);
 
@@ -43,7 +42,7 @@ export const CardProvider = ({ children }) => {
   };
 
   const totalItems = card.reduce((sum, item) => sum + item.quantity, 0);
-  const totalPrice = card.reduce(
+  const totalprice = card.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
@@ -56,7 +55,7 @@ export const CardProvider = ({ children }) => {
         removeFromCard,
         updateQuantity,
         totalItems,
-        totalPrice,
+        totalprice,
       }}
     >
       {children}
