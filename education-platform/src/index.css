@@ -79,3 +79,8 @@ h4{
   margin-left: 80px;
   border: 1px solid #fff;
 }
+.cupon:hover{
+  background: #198754 ;
+  color: white;
+  border: #198754 solid 2px;
+}
