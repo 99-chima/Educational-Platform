@@ -1,9 +1,11 @@
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import {Card, Button, Badge} from "react-bootstrap";
 import {FaStar, FaShoppingCart} from "react-icons/fa";
 import { CardContext } from "./CardContext";
 const CourseCard =({course}) => {
 const {addtoCard} = useContext(CardContext);
+const navigate = useNavigate();
 const renderStars = (rating)=> {
    return Array.from({length:5}, (_, i) => (
     <FaStar key={i} color={i < rating ? "#ffb400" : "#e8e1e1"} />
@@ -11,7 +13,7 @@ const renderStars = (rating)=> {
    )
  };
  return(
-     <Card className="shadow course-card border-0 rounded-4 overflow-hidden position-relative pb-4"
+     <Card className="shadow course-card border-0 rounded-4 overflow-hidden position-relative pb-5"
      style={{
          width: "22rem",
          margin: "20px auto",
@@ -34,10 +36,10 @@ const renderStars = (rating)=> {
                  %10 off
              </Badge>
              <Badge className="bg-secondary position-absolute top-0 end-0 m-2 fs-6 px-2 rounded-pill shadow-sm">
-                 {course.Price} USD
+                 {course.price} USD
              </Badge>
          </div>
-         <Card.Body className="text-center d-flex flex-column justify-content-between px-3" style={{height: "350px",}}>
+         <Card.Body className="text-center d-flex flex-column px-3" style={{height: "350px",}}>
              <div>
              <Card.Title className="fs-5 fw-bold text-primary mb-1" style={{lineHeight: "1.5", }}>{course.name}</Card.Title>
              <Card.Text className="text-muted small mt-2 lh-lg" style={{lineHeight: "1.5",}}>{course.description}</Card.Text>
@@ -45,9 +47,10 @@ const renderStars = (rating)=> {
                  {renderStars(course.rating || 4)}
              </div>
              <div className="text-decoration-line-through text-muted mb-2 small">
-               {parseFloat(course.Price * 1.25).toFixed(2)} USD
+               {parseFloat(course.price * 1.25).toFixed(2)} USD
              </div>
              </div>
+             <div className="mt-auto d-flex flex-column justify-content-center">
              <Button onClick={() => addtoCard(course)}
              className="mt-3 rounded-pill fw-semibold d-flex align-items-center justify-content-center ga-2 text-white"
              style={{
@@ -57,9 +60,17 @@ const renderStars = (rating)=> {
                  <FaShoppingCart />
                 <span className="ms-2">Add to cart</span>
              </Button>
+             <Button  onClick={() => navigate(`/course/${course.id}`)}
+             className="mt-2 rounded-pill fw-semibold d-flex align-items-center justify-content-center ga-2 text-white"
+             style={{
+                 background: "linear-gradient(90deg, #0D6EFD, #00D4FF)",
+                 border: "none",
+             }}>
+                <span>Details</span>
+             </Button>
+             </div>
          </Card.Body>
      </Card>
  )
 };
 export default CourseCard;
-
