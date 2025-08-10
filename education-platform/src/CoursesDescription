@@ -1,0 +1,38 @@
+import { useEffect, useState } from 'react';
+import CoursesList from './CoursesList';
+
+const CoursesPage = () => {
+  const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
+  document.body.style.overflowX = "hidden";
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+        const data = await res.json();
+        const formatted = data.slice(0, 1).map(item => ({
+          id: item.id,
+          name: item.title,
+          description: item.body,
+          image: `https://picsum.photos/seed/${item.id}/400/300`,
+          price: (Math.random() * 100).toFixed(2),
+          rating: Math.floor(Math.random() * 5) + 1
+        }));
+        setCourses(formatted);
+      } catch (err) {
+        console.error('Error fetching courses:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCourses();
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+ 
+  return <CoursesList course={courses} />;
+  
+};
+
+export default CoursesPage;
